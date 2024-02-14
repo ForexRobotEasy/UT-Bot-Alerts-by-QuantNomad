@@ -1,0 +1,59 @@
+
+// UT Bot Alerts by QuantNomad
+// Developer's site: forexroboteasy.com
+// Development: Forex Robot Easy Team
+
+// Include necessary trading functions
+#include <Trade\Trade.mqh>
+
+// Indicator initialization function
+int OnInit()
+{
+    // Check if the indicator is attached to the chart
+    if(!ChartIndicatorAdd(0, 'UT Bot Alerts', 0, 0))
+    {
+        // Display an error message if the indicator fails to attach
+        Print('Failed to attach UT Bot Alerts to the chart');
+        return INIT_FAILED;
+    }
+    
+    // Initialize the trade module
+    if(!TradeInit())
+    {
+        // Display an error message if the trade module fails to initialize
+        Print('Failed to initialize trade module');
+        return INIT_FAILED;
+    }
+    
+    // Set indicator parameters and settings
+    
+    // Process and analyze large data sets in a light-load manner
+    
+    // Integration with Expert Advisors and input fields
+    
+    // Return initialization success
+    return INIT_SUCCEEDED;
+}
+
+// Indicator deinitialization function
+void OnDeinit(const int reason)
+{
+    // Remove the indicator from the chart
+    ChartIndicatorDelete(0, 'UT Bot Alerts');
+    
+    // Deinitialize the trade module
+    TradeDeinit();
+}
+
+// Indicator calculation function
+int OnCalculate(const int rates_total, const int prev_calculated, const datetime &time[], const double &open[], const double &high[], const double &low[], const double &close[], const long &tick_volume[], const long &volume[], const int &spread[])
+{
+    // Perform indicator calculations
+    
+    // Generate trading signals based on the calculations
+    
+    // Execute trades based on the generated signals
+    
+    // Return the number of calculated bars
+    return rates_total;
+}
